@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
+
 @RestController
 @RequestMapping("/api")
 public class ListingController {
@@ -24,7 +26,7 @@ public class ListingController {
     // method take input (address, latitude, longitude, rowsPerPage)
     // call fetchListing to get response from external api.
     @PostMapping
-    public String createEntry(@RequestBody Root root) throws JsonProcessingException {
+    public String createEntry(@RequestBody Root root) throws IOException {
 
         String address = root.getVariables().getInput().getLocation().searchString;
         double lan = root.getVariables().getInput().getLocation().getLatitude();
