@@ -9,7 +9,7 @@ import lombok.*;
 @ToString
 public class ListingDto {
 
-    private String id;
+    private long id;
     private String title;
     private String pageName;
     private double amountPerStay;
